@@ -5,7 +5,7 @@ import { withRedux } from "./utils";
 const App = () => {
   return (
       <div>
-            <ExchangePage />
+          <ExchangePage />
       </div>
   );
 }
