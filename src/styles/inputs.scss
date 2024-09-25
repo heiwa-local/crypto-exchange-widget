@@ -1,0 +1,23 @@
+.input {
+    $vertical-input-padding: 14px;
+    $horizontal-input-padding: 16px;
+    $font-size: 16px;
+    $line-height: 1.5;
+    $border-radius: 5px;
+    $border-size: 1px;
+
+    width: fit-content;
+    height: fit-content;
+    background: #F6F7F8;
+    border: none;
+    padding: $vertical-input-padding $horizontal-input-padding;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: #282828;
+    border-radius: $border-radius;
+    border: $border-size solid #E3EBEF;
+
+    &::placeholder {
+        color: #80A2B6;
+    }
+}

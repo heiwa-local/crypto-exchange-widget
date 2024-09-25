@@ -1,0 +1,24 @@
+.button {
+    position: relative;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #11B3FE;
+    transition: 0.25s;
+    cursor: pointer;
+
+    span {
+        margin: auto;
+        font-size: 16px;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+
+    &:hover {
+        background: #0095E0;
+    }
+
+    &:active {
+        scale: 0.9;
+    }
+}

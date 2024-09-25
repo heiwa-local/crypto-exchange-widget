@@ -1,0 +1,47 @@
+.dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    max-height: calc(5 * 48px);
+    overflow: scroll;
+
+    &_active {
+        display: block;
+    }
+
+    &_hidden {
+        display: none;
+    }
+}
+
+.dropdown-list-item {
+    display: flex;
+    padding: 14px 16px;
+    column-gap: 16px;
+    cursor: pointer;
+
+    &:hover {
+        background: #EAF1F7;
+    }
+
+    &__leading-image-wrapper {
+        width: fit-content;
+        height: 20px;
+        margin: auto;
+    }
+
+    &__leading-image {
+        height: 100%;
+    }
+
+    &__label {
+        width: fit-content;
+        min-width: 34px;
+    }
+
+    &__description {
+        width: 100%;
+        color: #80A2B6;
+    }
+}
