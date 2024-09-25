@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
-import exchangeWidgetSlice from "../stores/exchange-widget/slice"
+import { exchangeWidgetSlice } from "../stores"
 
 export const makeStore = () => {
     const store = configureStore({
@@ -14,8 +14,8 @@ export const makeStore = () => {
 
 export const globalStore = makeStore()
 
-export type RootState = ReturnType<typeof globalStore.getState>
-export type AppDispatch = typeof globalStore.dispatch
+type RootState = ReturnType<typeof globalStore.getState>
+type AppDispatch = typeof globalStore.dispatch
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 export const useAppDispath = useDispatch<AppDispatch>

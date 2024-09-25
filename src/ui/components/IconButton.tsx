@@ -1,4 +1,4 @@
-import { getIconByName } from "../utils/iconPack"
+import { getIconByName } from '../../utils/iconPack';
 import cn from 'classnames';
 
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

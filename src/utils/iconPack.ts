@@ -1,4 +1,4 @@
-import { Icon } from "../components/Icon";
+import { Icon } from '../ui/components/Icon';
 
 const iconPack = {
     arrowDown: Icon.ArrowDown,

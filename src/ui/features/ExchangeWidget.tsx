@@ -1,19 +1,29 @@
-import { useEffect, useState } from "react"
-import { Button } from "./Button"
-import { IconButton } from "./IconButton"
-import { Input } from "./Input"
-import { MultiInput } from "./MultiInput"
-import { Wrapper } from "./Wrapper"
-import { useAppDispath } from "../utils/globalStore"
-import { useExchangeState } from "../stores/exchange-widget/hooks"
-import EXCHANGE_ACTIONS from "../stores/exchange-widget/actions"
-import { Currency } from "../domain/model/Currency"
+import { 
+    useEffect, 
+    useState
+ } from 'react';
+
+import { useAppDispath } from '../../utils';
+import { 
+    EXCHANGE_ACTIONS,
+    useExchangeState
+ } from '../../stores';
+import { Currency } from '../../domain';
+import { Wrapper } from '../components/Wrapper';
+import { MultiInput } from '../components/MultiInput';
+import { IconButton } from '../components/IconButton';
+import { Input } from '../components/Input';
+import { Button } from '../components/Button';
+import cn from 'classnames';
 
 interface ExchangeWidgetProps {
-
+    className?: string
 }
 
-export const ExchangeWidget: React.FC<ExchangeWidgetProps> = ({...props}) => {
+export const ExchangeWidget: React.FC<ExchangeWidgetProps> = ({
+    className,
+    ...props
+}) => {
 
     const state = useExchangeState()
     const dispatch = useAppDispath()
@@ -72,10 +82,10 @@ export const ExchangeWidget: React.FC<ExchangeWidgetProps> = ({...props}) => {
     ])
 
     return (
-        <Wrapper 
+        <Wrapper
             {...props}
             key={key}
-            className='exchange-widget'
+            className={cn(className, 'exchange-widget')}
         >
             <Wrapper className='exchange-widget__meta'>
                 <h1>Crypto Exchange</h1>

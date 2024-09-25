@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 interface DividerProps {
     className?: string;
@@ -6,11 +6,12 @@ interface DividerProps {
 
 export const Divider: React.FC<DividerProps> = ({
     className,
-}, ...restProps) => {
+    ...props
+}) => {
 
     return (
         <div
-            {...restProps}
+            {...props}
             className={className}
         />
     )

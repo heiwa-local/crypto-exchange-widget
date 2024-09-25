@@ -15,7 +15,7 @@ export const DropdownList: React.FC<DropdownListProps> = ({
     isOpen = false,
     items,
     onSelect,
-    ...restProps
+    ...props
 }) => {
 
     const handleSelect = (key: any) => {
@@ -25,7 +25,7 @@ export const DropdownList: React.FC<DropdownListProps> = ({
     return (
         <ul
             className={cn(className, 'dropdown-list', isOpen ? 'dropdown-list_active' : 'dropdown-list_hidden' )}
-            {...restProps}
+            {...props}
         >
             {items.map((item) => (
                 <DropdownListItem
@@ -41,7 +41,7 @@ export const DropdownList: React.FC<DropdownListProps> = ({
     )
 }
 
-export interface DropdownListItemProps {
+export interface DropdownListItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
     className?: string,
     key?: any,
     leadingImageSrc?: string,
@@ -56,8 +56,9 @@ const DropdownListItem: React.FC<DropdownListItemProps> = ({
     leadingImageSrc,
     label,
     onClick,
-    description
-}, ...restProps) => {
+    description,
+    ...props
+}) => {
 
     const handleClick = () => {
         if (onClick) onClick()
@@ -68,7 +69,7 @@ const DropdownListItem: React.FC<DropdownListItemProps> = ({
             className={cn(className, 'dropdown-list-item')}
             key={key}
             onClick={handleClick}
-            {...restProps}
+            {...props}
         >
             {leadingImageSrc && (
                 <Wrapper className='dropdown-list-item__leading-image-wrapper'>

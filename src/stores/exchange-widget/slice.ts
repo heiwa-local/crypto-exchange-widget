@@ -70,7 +70,7 @@ const exchangeWidgetSlice = createSlice({
                 state.errorMessage = 'This pair is disabled now'
             } else {
                 if (minAmount && (minAmount > state.amountFrom)) {
-                    state.errorMessage = 'Amount below acceptable'
+                    state.errorMessage = `Minimum amount is ${minAmount}`
                 } else {
                     state.errorMessage = ''
                 }
