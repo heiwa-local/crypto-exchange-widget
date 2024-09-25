@@ -64,8 +64,6 @@ const exchangeWidgetSlice = createSlice({
 
         builder.addCase(EXCHANGE_ACTIONS.updatePairInfo.fulfilled, (state, action) => {
             const {minAmount, price} = action.payload;
-            
-            console.log(minAmount, price)
 
             if (minAmount instanceof Error) {
                 state.minAmount = undefined
